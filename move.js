@@ -1,0 +1,64 @@
+AFRAME.registerComponent("move",{
+    
+    init: function(){
+        this.move()
+    },
+    move: function(){
+        window.addEventListener("keydown", (e)=>{
+            if(e.key==="x"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x,
+                    y:pos.y+0.5,
+                    z:pos.z
+                })
+            }
+            if(e.key==="y"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x,
+                    y:pos.y-0.5,
+                    z:pos.z
+                })
+            }
+            if(e.key==="c"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x+0.5,
+                    y:pos.y,
+                    z:pos.z
+                })
+            }
+            if(e.key==="v"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x-0.5,
+                    y:pos.y,
+                    z:pos.z
+                })
+            }
+            if(e.key==="b"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x,
+                    y:pos.y,
+                    z:pos.z+0.5
+                })
+            }
+            if(e.key==="n"){
+                cam=document.querySelector("#camera")
+                pos=cam.getAttribute("position")
+                cam.setAttribute("position",{
+                    x:pos.x,
+                    y:pos.y,
+                    z:pos.z-0.5
+                })
+            }
+        })
+    }
+})
